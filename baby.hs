@@ -1,3 +1,6 @@
+-- Exercises/examples/inspired by "Learn you a Haskell for Great Good" (or
+-- whatever it is)
+
 doubleMe x = x * 2
 doubleUs x y = doubleMe x + doubleMe y
 
