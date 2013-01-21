@@ -13,7 +13,7 @@ appendTail a b = a ++ b
 -- lists are zero indexed
 getListElement l i = l !! i
 
--- nice drfinition of factorial
+-- nice definition of factorial
 factorial :: Integer -> Integer
 factorial n = product [1..n]
 
