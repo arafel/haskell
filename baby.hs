@@ -17,3 +17,6 @@ getListElement l i = l !! i
 factorial :: Integer -> Integer
 factorial n = product [1..n]
 
+fib :: Integer -> Integer
+fib n = if n  < 2 then 1
+		else n + (fib (n - 1))
