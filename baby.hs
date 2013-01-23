@@ -18,5 +18,13 @@ factorial :: Integer -> Integer
 factorial n = product [1..n]
 
 fib :: Integer -> Integer
-fib n = if n  < 2 then 1
-		else n + (fib (n - 1))
+fib n = if n  < 3 then 1
+		else (fib (n - 2)) + (fib (n - 1))
+
+fact n = 
+	case n of
+		1 -> 1
+		_ -> n * fact (n - 1)
+
+main =
+	putStrLn "Hello world"
