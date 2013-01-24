@@ -27,5 +27,8 @@ fact n =
 		1 -> 1
 		_ -> n * fact (n - 1)
 
+rev :: [x] -> [x]
+rev x = x
+
 main =
 	putStrLn "Hello world"
