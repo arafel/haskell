@@ -29,16 +29,16 @@ fact n =
 		1 -> 1
 		_ -> n * fact (n - 1)
 
-rev :: [x] -> [x]
-rev (x:xs) = rev xs : x 
--- rev x = x
-
 len :: [a] -> Integer
 len [] = 0
 len (x:xs) = 1 + len xs
 
+rev :: [a] -> [a]
+rev [] = []
+rev (x:xs) = concatList (rev xs) ([x])
+
 main :: IO()
 main = do 
-		putStrLn ("Hello world")
+		putStrLn (rev "Hello world")
 		-- let a = [1, 2, 3]
 		-- putStrLn len(a)
