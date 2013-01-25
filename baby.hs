@@ -1,6 +1,8 @@
 -- Exercises/examples/inspired by "Learn you a Haskell for Great Good" (or
 -- whatever it is)
 
+import Text.Printf (printf)
+
 doubleMe x = x * 2
 doubleUs x y = doubleMe x + doubleMe y
 
@@ -27,8 +29,16 @@ fact n =
 		1 -> 1
 		_ -> n * fact (n - 1)
 
-rev :: [x] -> [x]
-rev x = x
+-- rev :: [x] -> [x]
+-- rev x = x
+-- rev (x:xs) = rev xs :: x 
 
-main =
-	putStrLn "Hello world"
+len :: [a] -> Integer
+len [] = 0
+len (x:xs) = 1 + len xs
+
+main :: IO()
+main = do 
+		putStrLn ("Hello world")
+		let a = [1, 2, 3]
+		printf ("%i\n" len(a))
