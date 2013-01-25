@@ -63,3 +63,4 @@ main =
 		-- putStrLn (len a) -- type mismatch, can't do that
 		printf "Factorial 5 is %i\n" (fact 5)
 		printf "%i\n" (len a)
+		print (fiblist 10)
