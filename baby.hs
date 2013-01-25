@@ -34,8 +34,9 @@ len [] = 0
 len (x:xs) = 1 + len xs
 
 rev :: [a] -> [a]
-rev [] = []
+-- rev [] = []
 rev (x:xs) = concatList (rev xs) ([x])
+rev x = x
 
 main :: IO()
 main = do 
