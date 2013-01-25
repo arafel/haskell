@@ -1,8 +1,6 @@
 -- Exercises/examples/inspired by "Learn you a Haskell for Great Good" (or
 -- whatever it is)
 
-import Text.Printf (printf)
-
 doubleMe x = x * 2
 doubleUs x y = doubleMe x + doubleMe y
 
