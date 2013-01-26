@@ -25,7 +25,7 @@ fib :: Integer -> Integer
 fib n = if n  < 3 then 1
 		else (fib (n - 2)) + (fib (n - 1))
 
--- Not the most effecient way by a long short
+-- Not the most effecient way; can't work out how to build it as I go, yet.
 fiblist :: Integer -> [Integer]
 fiblist n = [ fib x | x <- [1..n]]
 
@@ -43,6 +43,16 @@ rev :: [a] -> [a]
 rev (x:xs) = concatList (rev xs) ([x])
 rev x = x
 
+-- Copied straight from webpage
+maximum' :: (Ord a) => [a] -> a  
+maximum' [] = error "maximum of empty list"  
+maximum' [x] = x  
+maximum' (x:xs)   
+    | x > maxTail = x  
+    | otherwise = maxTail  
+    where maxTail = maximum' xs
+
+-- Rewritten by me
 likeHaskell :: IO()
 likeHaskell = 
 	do 
