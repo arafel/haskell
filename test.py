@@ -23,6 +23,17 @@ def fib2(n, acc):
 def fiblist2(n):
 	return fib2(n, [])
 
+def myunzip(thelist):
+	a = []
+	b = []
+	for item in thelist:
+		c, d = item
+		a.append(c)
+		b.append(d)
+	return a, b
+
+
 if __name__ == "__main__":
 	print fiblist(10)
+	print myunzip([(1, 2), (3, 4)])
 
