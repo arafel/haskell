@@ -1,6 +1,6 @@
 module Unzip where
 
-myunzip :: [(x,y)] -> ([x], [y])
+myunzip :: [(a,b)] -> ([a], [b])
 myunzip x = myunzip' [] [] x
     where
         myunzip' :: [a] -> [b] -> [(a,b)] -> ([a], [b])

@@ -9,3 +9,4 @@ cabal-dev
 baby
 *.pyc
 Session.vim
+unzip
