@@ -26,8 +26,18 @@ fib n = if n  < 3 then 1
 		else (fib (n - 2)) + (fib (n - 1))
 
 -- Not the most effecient way; can't work out how to build it as I go, yet.
+bad_fiblist :: Integer -> [Integer]
+bad_fiblist n = [ fib x | x <- [1..n]]
+
 fiblist :: Integer -> [Integer]
-fiblist n = [ fib x | x <- [1..n]]
+fiblist n = 
+    fiblist' 1 n 0 1 
+    where
+        fiblist' :: Integer -> Integer -> Integer -> Integer -> [Integer]
+        fiblist' i max val1 val2
+            | i > max = []
+            | otherwise = ([val1 + val2]) ++ fiblist' (i + 1) n val2 (val1 + val2)
+
 
 fact :: Integer -> Integer
 fact n = 
