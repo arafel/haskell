@@ -31,3 +31,12 @@ myLength (x:xs) = 1 + (myLength xs)
 myReverse :: [a] -> [a]
 myReverse [] = []
 myReverse (x:xs) = (myReverse xs) ++ [x]
+
+isPalindrome :: (Eq a) => [a] -> Bool
+isPalindrome xs = xs == (reverse xs)
+
+main = 
+    do
+        print "Hello"
+        print ("Is 'madam' a palindrome? " ++ show (isPalindrome "madam"))
+        print ("Is 'wombat' a palindrome? " ++ show (isPalindrome "wombat"))
