@@ -35,8 +35,20 @@ myReverse (x:xs) = (myReverse xs) ++ [x]
 isPalindrome :: (Eq a) => [a] -> Bool
 isPalindrome xs = xs == (reverse xs)
 
+compress :: (Eq a) => [a] -> [a]
+compress x = 
+    compress' (head x) (tail x) where
+        compress' :: (Eq a) => a -> [a] -> [a]
+        compress' last [] = [last]
+        compress' last (x:xs) =
+            if last == x then
+                compress' x xs
+            else
+                [x] ++ compress' x xs
+
 main = 
     do
         print "Hello"
         print ("Is 'madam' a palindrome? " ++ show (isPalindrome "madam"))
         print ("Is 'wombat' a palindrome? " ++ show (isPalindrome "wombat"))
+        print (compress ["a","a","a","a","b","c","c","a","a","d","e","e","e","e"])
