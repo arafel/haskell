@@ -36,15 +36,15 @@ isPalindrome :: (Eq a) => [a] -> Bool
 isPalindrome xs = xs == (reverse xs)
 
 compress :: (Eq a) => [a] -> [a]
-compress x = 
-    compress' (head x) (tail x) where
-        compress' :: (Eq a) => a -> [a] -> [a]
-        compress' last [] = [last]
-        compress' last (x:xs) =
-            if last == x then
-                compress' x xs
-            else
-                [x] ++ compress' x xs
+compress [x] = [x]
+compress (x:xs) =
+    if (head xs) == x then
+        compress xs
+    else
+        x : (compress xs)
+
+-- *Main> pack ['a', 'a', 'a', 'a', 'b', 'c', 'c', 'a', 'a', 'd', 'e', 'e', 'e', 'e']
+-- ["aaaa","b","cc","aa","d","eeee"]
 
 main = 
     do
