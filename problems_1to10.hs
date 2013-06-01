@@ -4,6 +4,9 @@ myLast :: [Integer] -> Integer
 myLast [x] = x
 myLast (x:xs) = myLast xs
 
+myLast' :: [Integer] -> Integer
+myLast' x = head (reverse x)
+
 myButLast :: [Integer] -> Integer
 myButLast (x:xs) = 
     if ((length xs) == 1) then 
