@@ -45,8 +45,16 @@ compress (x:xs) =
 
 -- *Main> pack ['a', 'a', 'a', 'a', 'b', 'c', 'c', 'a', 'a', 'd', 'e', 'e', 'e', 'e']
 -- ["aaaa","b","cc","aa","d","eeee"]
--- pack :: (Eq a) => [a] -> [a]
--- pack 
+pack :: (Eq a) => [a] -> [a]
+pack x = pack' x 0 []
+    where
+        pack' :: (Eq a) => [a] -> Int -> [a] -> [a]
+        pack' [x] count acc = (take count (repeat x)) ++ acc
+        pack' (x:xs) count acc =
+            if (head xs) == x then
+                pack' xs (count + 1) acc
+            else
+                pack' xs 0 ((take count (repeat x)) ++ acc)
 
 main = 
     do
@@ -54,3 +62,4 @@ main =
         print ("Is 'madam' a palindrome? " ++ show (isPalindrome "madam"))
         print ("Is 'wombat' a palindrome? " ++ show (isPalindrome "wombat"))
         print (compress ["a","a","a","a","b","c","c","a","a","d","e","e","e","e"])
+        print (pack ['a', 'a', 'a', 'a', 'b', 'c', 'c', 'a', 'a', 'd', 'e', 'e', 'e', 'e'])
