@@ -4,6 +4,9 @@ isPrime :: Integer -> Bool
 isPrime n = isPrime' (n)
     where
         isPrime' :: Integer -> Bool
+        isPrime' 1 = True
+        isPrime' 2 = True
+        isPrime' 3 = True
         isPrime' x = True
 
 main = 
