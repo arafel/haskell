@@ -10,7 +10,5 @@ baby
 *.pyc
 Session.vim
 unzip
-
 haskell.sublime-project
-
 haskell.sublime-workspace

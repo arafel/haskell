@@ -1,6 +1,7 @@
+#ghc -o problems_1to10 problems_1to10.hs
+#./problems_1to10	
 problems: problems_1to10.hs
-	ghc -o problems_1to10 problems_1to10.hs
-	./problems_1to10
+	@runhaskell problems_1to10.hs
 
 baby: baby.hs
 	ghc -o baby baby.hs
